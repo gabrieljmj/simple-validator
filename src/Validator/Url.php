@@ -6,7 +6,7 @@
     class Url extends \AbstractElementOfChain{
         protected function realValidation(){
             if( !filter_var( $this->param, FILTER_VALIDATE_URL ) ){
-                throw new InvalidArgumentException( $this, sprintf( '%s is an invalid URL', $this->param ) );
+                throw new InvalidArgumentException( $this, sprintf( '%s must be an URL', $this->param ) );
             }
         }
     }

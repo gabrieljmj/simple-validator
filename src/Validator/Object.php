@@ -6,7 +6,7 @@
     class Object extends \AbstractElementOfChain{
         protected function realValidation(){
             if( is_object( $this->param ) ){
-                throw new InvalidArgumentException( $this, sprintf( '%s is an invalid object', $this->param ) );
+                throw new InvalidArgumentException( $this, sprintf( '%s must be an object', $this->param ) );
             }
         }
     }

@@ -12,7 +12,7 @@
         
         protected function realValidation(){
             if( !method_exists( $this->object, $this->param ) ){
-                throw new InvalidArgumentException( $this, sprintf( '%s is an invalid method', $this->param ) );
+                throw new InvalidArgumentException( $this, sprintf( '%s must be a method', $this->param ) );
             }
         }
     }

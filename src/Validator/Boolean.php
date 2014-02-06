@@ -6,7 +6,7 @@
     class Boolean extends \AbstractElementOfChain{
         protected function realValidation(){
             if( !is_bool( $this->param ) ){
-                throw new InvalidArgumentException( $this, sprintf( '%s is an invalid boolean', $this->param ) );
+                throw new InvalidArgumentException( $this, sprintf( '%s must be boolean', $this->param ) );
             }
         }
     }

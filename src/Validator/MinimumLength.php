@@ -10,7 +10,7 @@
         
         protected function realValidation(){
             if( strlen( $this->param ) < $this->maximumLength ){
-                throw new InvalidArgumentException( $this, sprintf( '%s is bigger that maximum length', $this->param ) );
+                throw new InvalidArgumentException( $this, sprintf( '%s is smaller that minimum length', $this->param ) );
             }
         }
     }

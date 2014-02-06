@@ -6,7 +6,7 @@
     class Cpf extends \AbstractElementOfChain{
         protected function realValidation(){
             if( !$this->cpfValidate( $param ) ){
-                throw new InvalidArgumentException( $this, sprintf( '%s is an invalid CPF', $param ) );
+                throw new InvalidArgumentException( $this, sprintf( '%s must be a CPF', $param ) );
             }
         }
         
