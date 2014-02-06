@@ -17,4 +17,6 @@
                 $this->sucessor->validate( $param );
             }
         }
+        
+        abstract protected function realValidation();
     }

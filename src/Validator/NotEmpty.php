@@ -3,10 +3,10 @@
         
     use Exception\InvalidArgumentException;
     
-    class NotEmtpty extends \AbstractElementOfChain{
-        public function realValidation(){
+    class NotEmpty extends \AbstractElementOfChain{
+        protected function realValidation(){
             if( empty( $this->param ) || $this->param === '' || $this->param === ' ' || is_null( $this->param ) ){
-                throw new InvalidArgumentException( $this, sprintf( '%s can\'t be empty', $this->param ) );
+                throw new InvalidArgumentException( $this, 'String can\'t be empty' );
             }
         }
     }

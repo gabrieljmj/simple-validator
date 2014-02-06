@@ -4,7 +4,7 @@
     use Exception\InvalidArgumentException;
     
     class Null extends \AbstractElementOfChain{
-        public function realValidation(){
+        protected function realValidation(){
             $this->param = trim( $this->param );
             
             if( !empty( $this->param ) || $this->param !== '' || $this->param !== ' ' || !is_null( $this->param ) ){

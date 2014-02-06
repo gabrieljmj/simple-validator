@@ -4,7 +4,7 @@
     use Exception\InvalidArgumentException;
     
     class Boolean extends \AbstractElementOfChain{
-        public function realValidation(){
+        protected function realValidation(){
             if( !is_bool( $this->param ) ){
                 throw new InvalidArgumentException( $this, sprintf( '%s is an invalid boolean', $this->param ) );
             }
