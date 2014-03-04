@@ -13,7 +13,6 @@ Return what validation failure
 
 ####Validations list
 * ``Arr`` Verify if element is an array
-<<<<<<< HEAD
 * ``Boolean`` Verify if element is a boolean
 * ``Callable`` Verify if element is a callable
 * ``Cpf`` Verify if element is a Cpf
@@ -35,15 +34,6 @@ Return what validation failure
 * ``Object`` Verify if element is an object
 * ``String`` Verify if element is a string
 * ``Url`` Verify if element is an URL
-=======
-* * ``Arr`` Verify if element is an array
-* * ``Arr`` Verify if element is an array
-* * ``Arr`` Verify if element is an array
-* * ``Arr`` Verify if element is an array
-* * ``Arr`` Verify if element is an array
-* * ``Arr`` Verify if element is an array
-* * ``Arr`` Verify if element is an array
->>>>>>> f61cf157f245588e7b8091e2dc6787fb564121ca
 
 ##Implemeting
 ```php
@@ -58,7 +48,4 @@ try{
    echo '<b>Error:</b> ' . $e->getMessage() . '<br /> <b>On test:</b> ' . $e->getInvalidParameterName();
 }
 ```
-<<<<<<< HEAD
 [My Twitter] (http://twitter.com/GabrielJMJ) / [My Facebook] (http://facebook.com/gabriel.forca)
-=======
->>>>>>> f61cf157f245588e7b8091e2dc6787fb564121ca
