@@ -1,7 +1,7 @@
 <?php
     namespace Validator;
         
-    use Exception\InvalidArgumentException;
+    use Exception\SimpleValidatorException;
     
     class MaximumLength extends \AbstractElementOfChain{
         private $maximumLength;
@@ -12,7 +12,7 @@
         
         protected function realValidation(){
             if( strlen( $this->param ) > $this->maximumLength ){
-                throw new InvalidArgumentException( $this, sprintf( '%s is bigger that maximum length', $this->param ) );
+                throw new SimpleValidatorException( $this, sprintf( '%s is bigger that maximum length', $this->param ) );
             }
         }
     }

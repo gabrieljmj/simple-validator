@@ -1,7 +1,7 @@
 <?php
     namespace Exception;
 
-    class InvalidArgumentException extends \Exception{
+    class SimpleValidatorException extends \UnexpectedValueExceotion{
         public function __construct( \InterfaceValidator $validator, $message ){
             parent::__construct( $message );
             $this->validator = $validator;

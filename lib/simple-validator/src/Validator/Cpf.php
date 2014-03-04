@@ -1,12 +1,12 @@
 <?php
     namespace Validator;
     
-    use Exception\InvalidArgumentException;
+    use Exception\SimpleValidatorException;
 
     class Cpf extends \AbstractElementOfChain{
         protected function realValidation(){
             if( !$this->cpfValidate( $param ) ){
-                throw new InvalidArgumentException( $this, sprintf( '%s must be a CPF', $param ) );
+                throw new SimpleValidatorException( $this, sprintf( '%s must be a CPF', $param ) );
             }
         }
         
