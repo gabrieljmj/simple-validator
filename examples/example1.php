@@ -1,5 +1,5 @@
 <?php
-    require_once '../config/autoload.php';
+    require_once '../lib/simple-validator/AutoLoader/autoload.php';
 
     //Validating a Email
     
