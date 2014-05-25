@@ -1,10 +1,11 @@
 <?php
-    require_once '../lib/simple-validator/AutoLoader/autoload.php';
+    require_once '../autoload/autoload.php';
 
     //Validating a Email
     
-    use Validator\Email;
-    use Validator\NotEmpty;
+    use SimpleValidator\Validator\Email;
+    use SimpleValidator\Validator\NotEmpty;
+    use SimpleValidator\Exception\SimpleValidatorException;
     
     $email = 'gamjj74@hotmail.com';
     
@@ -13,6 +14,6 @@
     
     try{
         $validator->validate( $email );
-    }catch( Exception\InvalidArgumentException $e ){
+    }catch( SimpleValidatorException $e ){
         echo '<b>Error:</b> ' . $e->getMessage() . '<br /> <b>On test:</b> ' . $e->getInvalidParameterName();
     }
