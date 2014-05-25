@@ -1,5 +1,6 @@
 Simple Validator
 ================
+[![Total Downloads](https://poser.pugx.org/gabrieljmj/simple-validator/downloads.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![Latest Unstable Version](https://poser.pugx.org/gabrieljmj/simple-validator/v/unstable.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![License](https://poser.pugx.org/gabrieljmj/simple-validator/license.png)](https://packagist.org/packages/gabrieljmj/simple-validator)
 
 To simple validations in PHP.
 ##Validations
@@ -56,7 +57,7 @@ $url = 'http://example.com';
 $validator = new NotEmpty; // verify if string is not empty
 $validator->setSucessor( new Url ); // verify if string is an URL
 
-if( validator->validate( $url ) ){ // realize all validations predefined
+if( $validator->validate( $url ) ){ // realize all validations predefined
     //Success
 }{
     //Fail
