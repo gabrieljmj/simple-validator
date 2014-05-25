@@ -4,7 +4,7 @@ Simple Validator
 
 To simple validations in PHP.
 ##Autoload
-Via composer
+####Via composer
 ```json
 {
     "psr-4": {
@@ -12,7 +12,7 @@ Via composer
     }
 }
 ```
-Autoload file
+####Autoload file
 ```php
 require_once SIMPLE_VALIDATOR_DIR . DIRECTORY_SEPARATOR . 'autoload' . DS . 'autoload.php'
 ```
@@ -50,7 +50,7 @@ Return what validation failure
 * ``Url`` Verify if element is an URL
 
 ##Implemeting
-###Enabled exception
+####Enabled exception
 ```php
 $url = 'http://example.com';
 
@@ -63,7 +63,7 @@ try{
    echo '<b>Error:</b> ' . $e->getMessage() . '<br /> <b>On test:</b> ' . $e->getInvalidParameterName();
 }
 ```
-###Disabled exception
+####Disabled exception
 ```php
 $url = 'http://example.com';
 
