@@ -6,7 +6,7 @@ To simple validations in PHP.
 ####Chain
 The implementation will be in a chain, where you'll show what the next validation for that element.
 ####SimpleValidatorException
-This is the exception that is thrown when one validation to fail
+This is the exception that is thrown when one validation to fail and the exception are enabled.
 
 ``SimpleValidatorException::getInvalidParameterName()``
 Return what validation failure
@@ -36,6 +36,7 @@ Return what validation failure
 * ``Url`` Verify if element is an URL
 
 ##Implemeting
+###Enabled exception
 ```php
 $url = 'http://example.com';
 
@@ -43,9 +44,21 @@ $validator = new NotEmpty; // verify if string is not empty
 $validator->setSucessor( new Url ); // verify if string is an URL
 
 try{
-  $validator->validate( $url ); // realize all validations predefined
+  $validator->validate( $url, true ); // realize all validations predefined
 }catch( SimpleValidatorException $e ){
    echo '<b>Error:</b> ' . $e->getMessage() . '<br /> <b>On test:</b> ' . $e->getInvalidParameterName();
 }
 ```
-[My Twitter] (http://twitter.com/GabrielJMJ) / [My Facebook] (http://facebook.com/gabriel.forca)
+###Disabled exception
+```php
+$url = 'http://example.com';
+
+$validator = new NotEmpty; // verify if string is not empty
+$validator->setSucessor( new Url ); // verify if string is an URL
+
+if( validator->validate( $url ) ){ // realize all validations predefined
+    //Success
+}{
+    //Fail
+}
+```
