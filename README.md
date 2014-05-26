@@ -52,6 +52,11 @@ Return what validation failure
 ##Implemeting
 ####Enabled exception
 ```php
+use SimpleValidator\Validator\NotEmpty;
+use SimpleValidator\Validator\Url;
+
+//...
+
 $url = 'http://example.com';
 
 $validator = new NotEmpty; // verify if string is not empty
@@ -65,6 +70,11 @@ try{
 ```
 ####Disabled exception
 ```php
+use SimpleValidator\Validator\NotEmpty;
+use SimpleValidator\Validator\Url;
+
+//...
+
 $url = 'http://example.com';
 
 $validator = new NotEmpty; // verify if string is not empty
