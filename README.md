@@ -54,6 +54,7 @@ Return what validation failure
 ```php
 use SimpleValidator\Validator\NotEmpty;
 use SimpleValidator\Validator\Url;
+use SimpleValidator\Exception\SimpleValidatorException;
 
 //...
 
