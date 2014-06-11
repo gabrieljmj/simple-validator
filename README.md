@@ -14,7 +14,7 @@ To simple validations in PHP.
 ```
 ####Autoload file
 ```php
-require_once SIMPLE_VALIDATOR_DIR . DIRECTORY_SEPARATOR . 'autoload' . DS . 'autoload.php'
+require_once SIMPLE_VALIDATOR_DIR . DIRECTORY_SEPARATOR . 'autoload' . DIRECTORY_SEPARATOR . 'autoload.php'
 ```
 ##Validations
 ####Chain
