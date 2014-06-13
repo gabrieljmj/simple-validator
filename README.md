@@ -1,6 +1,6 @@
 Simple Validator
 ================
-[![Total Downloads](https://poser.pugx.org/gabrieljmj/simple-validator/downloads.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![Latest Unstable Version](https://poser.pugx.org/gabrieljmj/simple-validator/v/unstable.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![License](https://poser.pugx.org/gabrieljmj/simple-validator/license.png)](https://packagist.org/packages/gabrieljmj/simple-validator)
+[![Total Downloads](https://poser.pugx.org/gabrieljmj/simple-validator/downloads.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![Latest Unstable Version](https://poser.pugx.org/gabrieljmj/simple-validator/v/unstable.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![License](https://poser.pugx.org/gabrieljmj/simple-validator/license.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![Quality](https://scrutinizer-ci.com/g/GabrielJMJ/simple-validator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/GabrielJMJ/simple-validator/)
 
 To simple validations in PHP.
 ##Autoload
