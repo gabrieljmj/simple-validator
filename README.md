@@ -3,6 +3,19 @@ Simple Validator
 [![Total Downloads](https://poser.pugx.org/gabrieljmj/simple-validator/downloads.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![Latest Unstable Version](https://poser.pugx.org/gabrieljmj/simple-validator/v/unstable.png)](https://packagist.org/packages/gabrieljmj/simple-validator) [![License](https://poser.pugx.org/gabrieljmj/simple-validator/license.png)](https://packagist.org/packages/gabrieljmj/simple-validator)
 
 To simple validations in PHP.
+##Autoload
+####Via composer
+```json
+{
+    "psr-4": {
+        "SimpleValidator\\": "vendor/gabrieljmj/simple-validator/lib/SimpleValidator/"
+    }
+}
+```
+####Autoload file
+```php
+require_once SIMPLE_VALIDATOR_DIR . DIRECTORY_SEPARATOR . 'autoload' . DIRECTORY_SEPARATOR . 'autoload.php'
+```
 ##Validations
 ####Chain
 The implementation will be in a chain, where you'll show what the next validation for that element.
@@ -37,8 +50,14 @@ Return what validation failure
 * ``Url`` Verify if element is an URL
 
 ##Implemeting
-###Enabled exception
+####Enabled exception
 ```php
+use SimpleValidator\Validator\NotEmpty;
+use SimpleValidator\Validator\Url;
+use SimpleValidator\Exception\SimpleValidatorException;
+
+//...
+
 $url = 'http://example.com';
 
 $validator = new NotEmpty; // verify if string is not empty
@@ -50,8 +69,13 @@ try{
    echo '<b>Error:</b> ' . $e->getMessage() . '<br /> <b>On test:</b> ' . $e->getInvalidParameterName();
 }
 ```
-###Disabled exception
+####Disabled exception
 ```php
+use SimpleValidator\Validator\NotEmpty;
+use SimpleValidator\Validator\Url;
+
+//...
+
 $url = 'http://example.com';
 
 $validator = new NotEmpty; // verify if string is not empty
