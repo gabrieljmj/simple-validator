@@ -18,7 +18,7 @@
         protected function realValidation(){
             $this->exceptionMsg = sprintf( '%s must be equal %s', $this->param, $this->toComparate );
 
-            if( $this->param == $toComparate ){
+            if( $this->param == $this->toComparate ){
                 return false;
             }
 

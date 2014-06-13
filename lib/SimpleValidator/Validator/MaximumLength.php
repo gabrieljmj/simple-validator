@@ -12,6 +12,10 @@
         private $maximumLength;
         
         public function __construct( $maximum ){
+            if( !is_int( $maximum ) ){
+                throw new \InvalidArgumentException( 'Maximum lenght must be an integer' );
+            }
+
             $this->maximumLength = ( int ) $maximum;
         }
         

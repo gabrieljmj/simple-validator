@@ -24,6 +24,8 @@
         public function validate( $param, $exception = false ){
             $this->param = $param;
             
+            $valid = false;
+
             if( $exception ){
                 if( !$this->realValidation() ){
                     throw new SimpleValidatorException( $this, $this->exceptionMsg );

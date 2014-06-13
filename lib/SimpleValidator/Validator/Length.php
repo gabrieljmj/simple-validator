@@ -12,7 +12,11 @@
         private $length;
         
         public function __construct( $length ){
-            $this->lenght = ( int ) $lenght;
+            if( !is_int( $length ) ){
+                throw new \InvalidArgumentException( 'Lenght must be an integer' );
+            }
+
+            $this->length = $length;
         }
         
         protected function realValidation(){
