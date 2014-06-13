@@ -10,6 +10,8 @@
     use SimpleValidator\InterfaceValidator;
 
     class SimpleValidatorException extends UnexpectedValueException{
+        protected $validator;
+
         public function __construct( InterfaceValidator $validator, $message ){
             parent::__construct( $message );
             $this->validator = $validator;

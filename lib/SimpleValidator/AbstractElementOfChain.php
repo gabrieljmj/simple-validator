@@ -11,6 +11,7 @@
 
     abstract class AbstractElementOfChain implements InterfaceValidator{
         protected $exceptionMsg;
+        protected $params;
 
         public function setSucessor( AbstractElementOfChain $validator ){
             $this->sucessor = $validator;
