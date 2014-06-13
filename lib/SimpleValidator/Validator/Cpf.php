@@ -10,9 +10,9 @@
 
     class Cpf extends AbstractElementOfChain{
         protected function realValidation(){
-            $this->exceptionMsg = sprintf( '%s must be a valid CPF', $param );
+            $this->exceptionMsg = sprintf( '%s must be a valid CPF', $this->param );
 
-            if( !$this->cpfValidate( $param ) ){
+            if( !$this->cpfValidate( $this->param ) ){
                 return false;
             }
 

@@ -9,14 +9,16 @@
     use SimpleValidator\AbstractElementOfChain;
     
     class MinimumLength extends AbstractElementOfChain{
-        public function __construct( $maximum ){
-            $this->maximumLength = ( int ) $maximum;
+        private $minimumLength;
+
+        public function __construct( $minimum ){
+            $this->minimumLength = ( int ) $minimum;
         }
         
         protected function realValidation(){
             $this->exceptionMsg = sprintf( '%s is smaller that minimum length', $this->param );
 
-            if( strlen( $this->param ) < $this->maximumLength ){
+            if( strlen( $this->param ) < $this->minimumLength ){
                 return false;
             }
 
