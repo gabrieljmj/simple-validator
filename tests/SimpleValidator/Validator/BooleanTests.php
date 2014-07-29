@@ -1,31 +1,29 @@
 <?php
     namespace Test\SimpleValidator\Validator;
 
-    use SimpleValidator\Validator\Arr;
+    use SimpleValidator\Validator\Boolean;
     use Test\SimpleValidator\Validator\AbstractTest;
     use \PHPUnit_Framework_TestCase;
 
-    class ArrTests extends AbstractTest
+    class BooleanTests extends AbstractTest
     {
-        protected $class = 'SimpleValidator\Validator\Arr';
-
         /**
          * @expectedException SimpleValidator\Exception\SimpleValidatorException
         */
         public function testIfTheExceptionIsActivatedValidationThrowsAnExceptionWhenItFails()
         {
-            $falseArr = 'This is not an array';
-            $validator = new Arr();
-            $validator->validate($falseArr, true);
+            $falseBool = 'This is not a boolean';
+            $validator = new Boolean();
+            $validator->validate($falseBool, true);
         }
 
         public function testIfExceptionsAreDisabledValidationReturnsBooleanWhenItFails()
         {
-            $falseArr = 'This is not an array';
-            $validator = new Arr();
+            $falseBool = 'This is not a boolean';
+            $validator = new Boolean();
             $this->assertFalse( 
-                $validator->validate($falseArr), 
-                'If param is not an array, when thw exceptions are disabled, must return boolean false' 
+                $validator->validate($falseBool), 
+                'If param is not a boolean, when thw exceptions are disabled, must return boolean false' 
             );
         }
 
@@ -34,9 +32,9 @@
         */
         public function testIfExceptionsAreAllowedWithAValidParamDoesNotThrowsAnException()
         {
-            $arr = array(1, 2, 3);
-            $validator = new Arr();
-            $validator->validate($arr, true);
+            $bool = true;
+            $validator = new Boolean();
+            $validator->validate($bool, true);
         }
 
         /**
@@ -44,8 +42,8 @@
         */
         public function testIfExceptionsAreDisabledWithAValidParamReturnABooleanTrue()
         {
-            $arr = array(1, 2, 3);
-            $validator = new Arr();
-            $this->assertTrue($validator->validate($arr));
+            $bool = true;
+            $validator = new Boolean();
+            $this->assertTrue($validator->validate($bool));
         }
     }

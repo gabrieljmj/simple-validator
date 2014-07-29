@@ -8,21 +8,24 @@
 
     use SimpleValidator\AbstractElementOfChain;
     
-    class MaximumLength extends AbstractElementOfChain{
+    class MaximumLength extends AbstractElementOfChain
+    {
         private $maximumLength;
         
-        public function __construct( $maximum ){
-            if( !is_int( $maximum ) ){
-                throw new \InvalidArgumentException( 'Maximum lenght must be an integer' );
+        public function __construct($maximum)
+        {
+            if (!is_int($maximum)) {
+                throw new \InvalidArgumentException('Maximum lenght must be an integer');
             }
 
-            $this->maximumLength = ( int ) $maximum;
+            $this->maximumLength = (int) $maximum;
         }
         
-        protected function realValidation(){
-            $this->exceptionMsg = sprintf( '%s is bigger that maximum length', $this->param );
+        protected function realValidation()
+        {
+            $this->exceptionMsg = sprintf('%s is bigger that maximum length', $this->param);
 
-            if( strlen( $this->param ) > $this->maximumLength ){
+            if (strlen($this->param) > $this->maximumLength) {
                 return false;
             }
 

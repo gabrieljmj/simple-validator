@@ -8,14 +8,12 @@
 
     use SimpleValidator\AbstractElementOfChain;
     
-    class Object extends AbstractElementOfChain{
-        protected function realValidation(){
-            $this->exceptionMsg = sprintf( '%s must be an object', $this->param );
+    class Object extends AbstractElementOfChain
+    {
+        protected function realValidation()
+        {
+            $this->exceptionMsg = sprintf('%s must be an object', $this->param);
 
-            if( !is_object( $this->param ) ){
-                return false;
-            }
-
-            return true;
+            return is_object($this->param);
         }
     }

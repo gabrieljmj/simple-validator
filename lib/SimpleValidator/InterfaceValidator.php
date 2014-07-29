@@ -4,8 +4,9 @@
      * @link http://github.com/gabrieljmj/simple-validator
     */
     
-	namespace SimpleValidator;
+    namespace SimpleValidator;
 
-    interface InterfaceValidator{
-        public function validate( $param );
+    interface InterfaceValidator
+    {
+        public function validate($param);
     }

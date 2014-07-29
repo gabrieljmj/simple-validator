@@ -8,12 +8,14 @@
 
     use SimpleValidator\AbstractElementOfChain;
     
-    class Null extends AbstractElementOfChain{
-        protected function realValidation(){
-            $param = trim( $this->param );
-            $this->exceptionMsg = sprintf( '%s must be null', $this->param );
+    class Null extends AbstractElementOfChain
+    {
+        protected function realValidation()
+        {
+            $param = trim($this->param);
+            $this->exceptionMsg = sprintf('%s must be null', $this->param);
             
-            if( !empty( $param ) || $param !== '' || $param !== ' ' || !is_null( $param ) ){
+            if (!empty($param) || $param !== '' || $param !== ' ' || !is_null($param)) {
                 return false;
             }
 

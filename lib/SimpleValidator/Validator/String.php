@@ -8,14 +8,12 @@
     
     use SimpleValidator\AbstractElementOfChain;
     
-    class File extends AbstractElementOfChain{
-        protected function realValidation(){
-            $this->exceptionMsg = sprintf( '%s must be string', $this->param );
+    class File extends AbstractElementOfChain
+    {
+        protected function realValidation()
+        {
+            $this->exceptionMsg = sprintf('%s must be string', $this->param);
 
-            if( !is_string( $this->param ) ){
-                return false;
-            }
-
-            return true;
+            return is_string($this->param);
         }
     }

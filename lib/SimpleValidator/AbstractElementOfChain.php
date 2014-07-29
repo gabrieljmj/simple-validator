@@ -9,33 +9,37 @@
     use SimpleValidator\InterfaceValidator;
     use SimpleValidator\Exception\SimpleValidatorException;
 
-    abstract class AbstractElementOfChain implements InterfaceValidator{
+    abstract class AbstractElementOfChain implements InterfaceValidator
+    {
         protected $exceptionMsg;
         protected $param;
 
-        public function setSucessor( AbstractElementOfChain $validator ){
+        public function setSucessor(AbstractElementOfChain $validator)
+        {
             $this->sucessor = $validator;
         }
         
-        public function hasSucessor(){
-            return isset( $this->sucessor );
+        public function hasSucessor()
+        {
+            return isset($this->sucessor);
         }
         
-        public function validate( $param, $exception = false ){
+        public function validate($param, $exception = false)
+        {
             $this->param = $param;
             
             $valid = false;
 
-            if( $exception ){
-                if( !$this->realValidation() ){
-                    throw new SimpleValidatorException( $this, $this->exceptionMsg );
+            if ($exception) {
+                if (!$this->realValidation()) {
+                    throw new SimpleValidatorException($this, $this->exceptionMsg);
                 }
-            }else{
+            } else {
                 $valid = $this->realValidation() ? true : false;
             }
 
-            if( $this->hasSucessor() ){
-                $valid = $this->sucessor->validate( $param, $exception );
+            if ($this->hasSucessor()) {
+                $valid = $this->sucessor->validate($param, $exception);
             }
 
             return $valid;

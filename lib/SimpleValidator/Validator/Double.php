@@ -8,14 +8,12 @@
 
     use SimpleValidator\AbstractElementOfChain;
     
-    class Double extends AbstractElementOfChain{
-        protected function realValidation(){
-            $this->exceptionMsg = sprintf( '%s must be double', $this->param );
+    class Double extends AbstractElementOfChain
+    {
+        protected function realValidation()
+        {
+            $this->exceptionMsg = sprintf('%s must be double', $this->param);
 
-            if( !is_double( $this->param ) ){
-                return false;
-            }
-
-            return true;
+            return is_double($this->param);
         }
     }

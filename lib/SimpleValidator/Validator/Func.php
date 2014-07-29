@@ -8,11 +8,13 @@
 
     use SimpleValidator\AbstractElementOfChain;
     
-    class Func extends AbstractElementOfChain{
-        protected function realValidation(){
-            $this->exceptionMsg = sprintf( '%s is an invalid function', $this->param );
+    class Func extends AbstractElementOfChain
+    {
+        protected function realValidation()
+        {
+            $this->exceptionMsg = sprintf('%s is an invalid function', $this->param);
 
-            if( !function_exists( $this->param ) ){
+            if (!function_exists($this->param)) {
                 return false;
             }
 

@@ -8,14 +8,12 @@
 
     use SimpleValidator\AbstractElementOfChain;
     
-    class Numeric extends AbstractElementOfChain{
-        protected function realValidation(){
-            $this->exceptionMsg = sprintf( '%s must be numeric', $this->param );
+    class Numeric extends AbstractElementOfChain
+    {
+        protected function realValidation()
+        {
+            $this->exceptionMsg = sprintf('%s must be numeric', $this->param);
 
-            if( !is_numeric( $this->param ) ){
-                return false;
-            }
-            
-            return true;
+            return is_numeric($this->param);
         }
     }

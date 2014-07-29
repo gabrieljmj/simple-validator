@@ -9,11 +9,13 @@
     use SimpleValidator\Exception\SimpleValidatorException;
     use SimpleValidator\AbstractElementOfChain;
     
-    class NotEmpty extends AbstractElementOfChain{
-        protected function realValidation(){
+    class NotEmpty extends AbstractElementOfChain
+    {
+        protected function realValidation()
+        {
             $this->exceptionMsg = 'String can\'t be empty';
 
-            if( empty( $this->param ) || $this->param === '' || $this->param === ' ' || is_null( $this->param ) ){
+            if (empty($this->param) || $this->param === '' || $this->param === ' ' || is_null($this->param)) {
                 return false;
             }
 

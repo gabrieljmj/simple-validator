@@ -11,18 +11,20 @@
     class Length extends AbstractElementOfChain{
         private $length;
         
-        public function __construct( $length ){
-            if( !is_int( $length ) ){
-                throw new \InvalidArgumentException( 'Lenght must be an integer' );
+        public function __construct($length)
+        {
+            if (!is_int($length)) {
+                throw new \InvalidArgumentException('Lenght must be an integer');
             }
 
             $this->length = $length;
         }
         
-        protected function realValidation(){
-            $this->exceptionMsg = sprintf( '%s must have %s caracters', $this->param, $this->length );
+        protected function realValidation()
+        {
+            $this->exceptionMsg = sprintf('%s must have %s caracters', $this->param, $this->length);
 
-            if( strlen( $this->param ) !== $this->length ){
+            if (strlen($this->param) !== $this->length) {
                 return false;
             }
 
