@@ -1,19 +1,19 @@
 <?php
-    /**
-     * @author Gabriel Jacinto <gamjj74@hotmail.com>
-     * @link http://github.com/gabrieljmj/simple-validator
-    */
+/**
+ * @author Gabriel Jacinto <gamjj74@hotmail.com>
+ * @link http://github.com/gabrieljmj/simple-validator
+*/
     
-    namespace SimpleValidator\Validator;
+namespace SimpleValidator\Validator;
 
-    use SimpleValidator\AbstractElementOfChain;
+use SimpleValidator\AbstractElementOfChain;
     
-    class Arr extends AbstractElementOfChain
+class Arr extends AbstractElementOfChain
+{
+    protected function realValidation()
     {
-        protected function realValidation()
-        {
-            $this->exceptionMsg = sprintf('%s must be an array', $this->param);
+        $this->exceptionMsg = sprintf('%s must be an array', $this->param);
 
-            return is_array($this->param);
-        }
+        return is_array($this->param);
     }
+}

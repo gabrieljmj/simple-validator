@@ -1,27 +1,27 @@
 <?php
-    /**
-     * @author Gabriel Jacinto <gamjj74@hotmail.com>
-     * @link http://github.com/gabrieljmj/simple-validator
-    */
+/**
+ * @author Gabriel Jacinto <gamjj74@hotmail.com>
+ * @link http://github.com/gabrieljmj/simple-validator
+*/
     
-    namespace SimpleValidator\Validator;
+namespace SimpleValidator\Validator;
     
-    use SimpleValidator\Exception\SimpleValidatorException;
-    use SimpleValidator\AbstractElementOfChain;
+use SimpleValidator\Exception\SimpleValidatorException;
+use SimpleValidator\AbstractElementOfChain;
     
-    class Method extends AbstractElementOfChain
+class Method extends AbstractElementOfChain
+{
+    private $object;
+        
+    public function __construct($object)
     {
-        private $object;
-        
-        public function __construct($object)
-        {
-            $this->object = $object;
-        }
-        
-        protected function realValidation()
-        {
-            $this->exceptionMsg = sprintf('%s must be a method', $this->param);
-
-            return method_exists($this->object, $this->param );
-        }
+        $this->object = $object;
     }
+        
+    protected function realValidation()
+    {
+        $this->exceptionMsg = sprintf('%s must be a method', $this->param);
+
+        return method_exists($this->object, $this->param );
+    }
+}

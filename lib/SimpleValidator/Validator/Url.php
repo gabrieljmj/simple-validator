@@ -1,23 +1,23 @@
 <?php
-    /**
-     * @author Gabriel Jacinto <gamjj74@hotmail.com>
-     * @link http://github.com/gabrieljmj/simple-validator
-    */
+/**
+ * @author Gabriel Jacinto <gamjj74@hotmail.com>
+ * @link http://github.com/gabrieljmj/simple-validator
+*/
     
-    namespace SimpleValidator\Validator;
+namespace SimpleValidator\Validator;
     
-    use SimpleValidator\AbstractElementOfChain;
+use SimpleValidator\AbstractElementOfChain;
     
-    class Url extends AbstractElementOfChain
+class Url extends AbstractElementOfChain
+{
+    protected function realValidation()
     {
-        protected function realValidation()
-        {
-            $this->exceptionMsg = sprintf('%s must be an URL', print_r($this->param, true));
+        $this->exceptionMsg = sprintf('%s must be an URL', print_r($this->param, true));
             
-            if (!filter_var($this->param, FILTER_VALIDATE_URL)) {
-                return true;
-            }
-
-            return false;
+        if (!filter_var($this->param, FILTER_VALIDATE_URL)) {
+            return true;
         }
+
+        return false;
     }
+}

@@ -1,34 +1,34 @@
 <?php
-    /**
-     * @author Gabriel Jacinto <gamjj74@hotmail.com>
-     * @link http://github.com/gabrieljmj/simple-validator
-    */
+/**
+ * @author Gabriel Jacinto <gamjj74@hotmail.com>
+ * @link http://github.com/gabrieljmj/simple-validator
+*/
     
-    namespace SimpleValidator\Validator;
+namespace SimpleValidator\Validator;
 
-    use SimpleValidator\AbstractElementOfChain;
+use SimpleValidator\AbstractElementOfChain;
     
-    class MaximumLength extends AbstractElementOfChain
+class MaximumLength extends AbstractElementOfChain
+{
+    private $maximumLength;
+        
+    public function __construct($maximum)
     {
-        private $maximumLength;
-        
-        public function __construct($maximum)
-        {
-            if (!is_int($maximum)) {
-                throw new \InvalidArgumentException('Maximum lenght must be an integer');
-            }
-
-            $this->maximumLength = (int) $maximum;
+        if (!is_int($maximum)) {
+            throw new \InvalidArgumentException('Maximum lenght must be an integer');
         }
-        
-        protected function realValidation()
-        {
-            $this->exceptionMsg = sprintf('%s is bigger that maximum length', $this->param);
 
-            if (strlen($this->param) > $this->maximumLength) {
-                return false;
-            }
-
-            return true;
-        }
+        $this->maximumLength = (int) $maximum;
     }
+        
+    protected function realValidation()
+    {
+        $this->exceptionMsg = sprintf('%s is bigger that maximum length', $this->param);
+
+        if (strlen($this->param) > $this->maximumLength) {
+            return false;
+        }
+
+         return true;
+    }
+}
